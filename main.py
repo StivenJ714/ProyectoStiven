@@ -9,9 +9,9 @@ base.title ("")
 nombre = simpledialog.askstring ("Nombre", "Ingrese su nombre: ")
 edad = simpledialog.askinteger ("Edad", "Ingrese su edad: ")
 
-mensaje = mayoria_de_edad(nombre, edad)
+msg = mayoria_de_edad(nombre, edad)
 
-usar_label = tkr.Label(base, text=mensaje, font=("Arial",20))
+usar_label = tkr.Label(base, text=msg, font=("Arial",20))
 usar_label.pack(pady=30)
 
 
