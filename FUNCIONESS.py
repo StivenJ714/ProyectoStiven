@@ -12,30 +12,34 @@
 
 
 def derechos_humanos():
-    print("Derecho a la vida")
-    print("Derecho a la igualdad ante la ley")
-    print("Derecho a la libertad")
-
+    #print ("Derecho a la vida")
+    #print("Derecho a la igualdad ante la ley")
+    #print("Derecho a la libertad")
+    return "\nDerecho a la vida\nDerecho a la igualdad ante la ley\nDerecho a la libertad"
 
 def derechos_mayorDeEdad():
-    print("Derecho a votar")
-    print("Derecho al trabajo")
+    #print("Derecho a votar")
+    #print("Derecho al trabajo")
+    return "Drecho a votar\nDerecho al trabajo" 
 
 def mayoria_de_edad(nombre,edad):
-    print(f'Según la edad de {nombre}, sus derechos son:')
+    mensaje = f'Según la edad de {nombre}, sus derechos son:\n'
     if edad >= 18:
-        derechos_humanos()
-        derechos_mayorDeEdad()
+        mensaje += derechos_humanos() + "\n" + derechos_mayorDeEdad ()
+        return mensaje
     else:
-        derechos_humanos()
+        mensaje += derechos_humanos()
+        return mensaje
 
 def mayoria_de_edad2(edad,nombre='DESCONOCIDO'):
-    print(f'Según la edad de {nombre}, sus derechos son:')
+    mensaje = f'Según la edad de {nombre}, sus derechos son:\n'
     if edad >= 18:
-        derechos_humanos()
-        derechos_mayorDeEdad()
+        mensaje += derechos_humanos() + "\n" + derechos_mayorDeEdad ()
+        #derechos_humanos()
+        #derechos_mayorDeEdad()
     else:
-        derechos_humanos()
+        mensaje += derechos_humanos()
+    return mensaje
 
 #MM = int(input("digite su edad"))
 #SS = input("ESCRIBA SU NFFFFOMBRE")
