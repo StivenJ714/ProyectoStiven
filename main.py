@@ -1,18 +1,32 @@
-import FUNCIONESS as fun
-from FUNCIONESS import mayoria_de_edad, mayoria_de_edad2
-import tkinter as tkr
-from tkinter import simpledialog
+from pelicula import Pelicula
+from catalogo_peliculas import CatalogoPeliculas as catalogo_peliculas
 
-base = tkr.Tk()
-base.title ("")
+print ("*** App Catalogo de Peliculas ***\n")
+opcion = None
+while opcion != 4:
+    try:
+        print ('''*** Opciones ***\n
+        1. Agregar pelicula
+        2. Listar Peliculas
+        3. Eliminar catalogo peliculas
+        4. Salir\n''')
+        
+        opcion = int(input("Selecciona una Opción (1-4): "))
 
-nombre = simpledialog.askstring ("Nombre", "Ingrese su nombre: ")
-edad = simpledialog.askinteger ("Edad", "Ingrese su edad: ")
+        if opcion == 1:
+            nombre_pelicula = input("Escribe el nombre de la pelicula: ")
+            pelicula = Pelicula(nombre_pelicula)
+            catalogo_peliculas.agregar_peliculas(pelicula)
+        
+        elif opcion == 2:
+            catalogo_peliculas.listar_pelicuas()
 
-msg = mayoria_de_edad(nombre, edad)
+        elif opcion == 3:
+            catalogo_peliculas.eliminar_peliculas()
 
-usar_label = tkr.Label(base, text=msg, font=("Arial",20))
-usar_label.pack(pady=30)
+    except Exception as e:
+        print (f"\nOcurrio un error: {e}\n")
 
+else:
+    print ("Saliendo del programa")
 
-base.mainloop()
